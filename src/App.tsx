@@ -1,20 +1,25 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { GlobalStyle } from './styles/GlobalStyle'
+import React from 'react';
+import { render } from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { GlobalStyle } from './styles/GlobalStyle';
+import Home from './components/Home';
+import Header from './components/Header';
+import { DBController } from './services/DBController';
 
-import Greetings from './components/Greetings'
-
-const mainElement = document.createElement('div')
-mainElement.setAttribute('id', 'root')
-document.body.appendChild(mainElement)
+const mainElement = document.createElement('div');
+mainElement.setAttribute('id', 'root');
+document.body.appendChild(mainElement);
 
 const App = () => {
-  return (
-    <>
-      <GlobalStyle />
-      <Greetings />
-    </>
-  )
-}
+    // DBController.create();
 
-render(<App />, mainElement)
+    return (
+        <>
+            <GlobalStyle />
+            <Header />
+            <Home />
+        </>
+    );
+};
+
+render(<App />, mainElement);
